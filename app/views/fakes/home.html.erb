@@ -1,0 +1,108 @@
+<%= render('shared/header_home_active') %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2 hidden-md-down purple">
+      <h3>What is faker?</h3>
+      <p style="font-size: 17px;text-align: justify;">Here you can generate fake stuff, from Credit cards to Book names and Galaxy names. It's free and always would be. It's source is on Github. For more info visit <a href="#">About Page</a></p>
+    </div>
+    <div class="div-carousel col-md-8 " style="height: 300px">
+      <section class="carousel slider">
+        <div>
+          <div class="contents">
+            <h1>Generate Fake Addresses</h1>
+            <p>With this awesome tool you can generate fake addresses which you could use in Surveys or untrusted websites in registration.<br/> To get started click the link below:<br/><a href="#" class="btn btn-warning">Generate fake addresses</a></p>
+          </div>
+        </div>
+        <div>
+          <div class="contents">
+            <h1>Random Galaxy Names!</h1>
+            <p>Generate a galaxy name with a click! Then you can give it to your Telescope and observer the sky. Give it a try and you will be fascinated by the variation of the results!<br><a href="#" class="btn btn-success">Lets get started!</a></p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="col-md-2 purple">
+      <h3>About its creator</h3>
+      <p style="font-size: 17px;text-align: justify">It's creator, Ehsan Akbari, is a programming and cracking enthusiast, doing lots of hobby projects. He is always ready to help and you could contact him through his <a href="mailto:ehsan13791359@gmail.com">email</a></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 info">
+      <h2>
+        <span class=" glyphicon glyphicon-question-sign"></span> How to use the Credit Card generator?
+      </h2>
+      <hr class="style18"/>
+      <p>It creates credit cards all random. It may create visa card, master card and so forth. Consequently, you can't choose the card type yourself but the good news is that it generates cards with card-types which are available to use in every website requiring credit cards.</p>
+    </div>
+
+    <div class="col-md-3 info">
+      <h2>
+        <span class=" glyphicon glyphicon-question-sign"></span> What's the Book name generator?
+      </h2>
+      <hr class="style18"/>
+      <p>
+        One of its great uses might be that you can fill your blog/page/database/etc. with data records which are meaningful since they are selected randomly from a large database of real existing Books' names. Also soon the support of sending <a href="http://www.json.org/">JSON</a> data will be added.
+      </p>
+    </div>
+
+    <div class="col-md-3 info">
+      <h2>
+        <span class=" glyphicon glyphicon-question-sign"></span> What about the Internet generator?
+      </h2>
+      <hr class="style18"/>
+      <p>Currently is can create fake emails, User Names, Passwords ( They are hashes, no meaningful expression ), Domain Name, IP address and URLs. These might come in handy when you are generating a bot to create spam users.  ( For education purposes only allowed )</p>
+    </div>
+
+    <div class="col-md-3 info">
+      <h2>
+        <span class=" glyphicon glyphicon-question-sign"></span> Does it create Lorem Ipsum texts?
+      </h2>
+      <hr class="style18"/>
+      <p>
+        Yes and it also offers a host of options to customize the generated text including the number of characters to be generated, number of sentences and finally the number of paragraphs. This tiny tool might come in handy when you want to fill in your website's static content.
+      </p>
+    </div>
+  </div>
+  <div class="row" style="background-color: white">
+    <hr class="style18"/>
+    <center><h1>Contact Me <span class="glyphicon glyphicon-earphone"></span></h1></center><br>
+    <hr class="style17"/>
+    <div class="col-md-4 info">
+      <h2 class="color-purplepurple">Github <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" class="icon"/></h2>
+      <hr class="style17"/>
+      <p>
+        You can see my projects and follow me on <a href="https://github.com/">Github</a> ( A version control tool ) and contribute to/maintain my projects as well. My account is <a href="https://github.com/EhsanAkbariBaseri">EhsanAkbariBaseri</a>.
+      </p>
+    </div>
+    <div class="col-md-4 info">
+      <h2 class="color-purple">StackoverFlow <img src="http://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-icon.png?v=c78bd457575a" class="icon"/></h2>
+      <hr class="style17"/>
+      <p>
+        You can find me in StackoverFlow chatrooms mainly as I'm not answering/asking questions these days much. Here is a <a href="http://chat.stackoverflow.com/users/4710450/ehsan">link</a> to my profile
+      </p>
+    </div>
+    <div class="col-md-4 info">
+      <h2 class="color-purple">Gmail <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/New_Logo_Gmail.svg/500px-New_Logo_Gmail.svg.png" class="icon"/></h2>
+      <hr class="style17"/>
+      <p>
+        This should be probably your last choice to contact me since I check my emails rarely ( mainly for checking account activation mails. lol ), anyhow <a href="mailto:ehsan13791359@gmail.com">this</a> is my Gmail account.
+      </p>
+    </div>
+  </div>
+</div><br>
+<center>
+  <div class="newsletter" >
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12"><center><h2>Subscribe to our newsletter <span class="glyphicon glyphicon-send"></span> : </h2> <br><input style="height: 50px" type="email" placeholder="Your Email here" class="form-control"/><br>
+          <a href="#" class="subscribe">Subscribe!</a>
+        </center></div>
+      </div>
+    </div>
+  </div>
+</center>
+<script>
+  $(document).ready(function () {
+    $(".carousel").slick({dots:true});
+  })
+</script>

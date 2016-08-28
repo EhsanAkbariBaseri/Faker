@@ -1,0 +1,72 @@
+<%= render('shared/header_index_active') %>
+<div class="container" style="background-color: white">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Here you can find a list of available things that Faker can generate for you</h1>
+      <br><br><div class="dropdown">
+        <button style="background-color: mediumpurple;color: white" class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">List of available fake generators
+          <span class="caret"></span></button>
+        <ul id="fakes-list" class="dropdown-menu" role="menu" aria-labelledby="menu1">
+            </ul>
+      </div><br><br>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12" id="fake-info">
+      <h2>Help Content</h2><br>
+      <p id="fake-info-p">Please select an option from list above!</p><br><br>
+    </div>
+  </div>
+  <br><br>
+  <a class="btn btn-info" onclick="goto_fake()">Lets generate fake stuff!</a><br><br>
+</div>
+<script>
+  var help_content = [];
+  // Help content of the fakes
+  var active_index = 0;
+  // Current selected choice
+  var addresses = [];
+
+  $(function () {
+    populate_about();
+    populate_addresses();
+    <% if @fake_options.any? %>
+    <% @fake_options.each do |i| %>
+    var content = "<li role='presentation'><a onclick='gen_info(" + "<%= Fake.find_by_option_fill(i).id %>"+")" +"' role='menuitem' tabindex='-1'>"+ "<%= i %>" +"</a></li>";
+    $("#fakes-list").append(content);
+    <% end %>
+    <% end %>
+  });
+
+  function gen_info(id) {
+    $("#fake-info-p").html(help_content[id-1]);
+    active_index = id;
+  }
+
+  function populate_about() {
+    <% if @fake_helps.any? %>
+    <% @fake_helps.each do |i| %>
+    help_content.push("<%= i %>");
+    <% end %>
+    <% end %>
+  }
+
+  function goto_fake() {
+    if(active_index==0) {
+      alert("You haven't chosen anything yet!");
+    }
+    else {
+      window.location.href = addresses[active_index-1];
+    }
+  }
+
+  function populate_addresses() {
+    <% if @fake_urls.any? %>
+    <% @fake_urls.each do |i| %>
+    addresses.push("<%= i %>");
+    <% end %>
+    <% end %>
+  }
+
+</script>

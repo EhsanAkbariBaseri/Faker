@@ -1,0 +1,32 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+#
+default: &default
+  adapter: mysql2
+  pool: 5
+  username: 'root'
+  password: 'akbari'
+  socket: /var/run/mysqld/mysqld.sock
+
+
+development:
+  <<: *default
+  database: 'fake_development'
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: 'fake_test'
+
+
+production:
+  user: 'ezsvftpxczowpm'
+  password: '0lC6_G4l4AMgaz7p1yO3MbmAFG'
+  host: 'ec2-54-243-200-37.compute-1.amazonaws.com'
+  port: 5432
+  database: 'd884jcflt3rdk'
