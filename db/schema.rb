@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160828113614) do
+ActiveRecord::Schema.define(version: 20160828131707) do
 
   create_table "fake_commands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "command"
     t.integer  "fake_function_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "name"
     t.index ["fake_function_id"], name: "index_fake_commands_on_fake_function_id", using: :btree
   end
 

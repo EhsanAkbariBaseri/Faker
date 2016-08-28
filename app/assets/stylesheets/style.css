@@ -275,3 +275,21 @@ input[type=email],input[type=text] {
 #fake-info-p {
     font-size: 17px;
 }
+
+#generated-info {
+    font-size: 17px;
+    line-height: 45px;
+}
+
+.key {
+    color: mediumpurple;
+    font-size: 20px;
+}
+
+.value {
+    color:darkseagreen;
+}
+
+#json-code {
+    font-family: monospace;
+}

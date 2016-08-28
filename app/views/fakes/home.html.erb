@@ -3,14 +3,14 @@
   <div class="row">
     <div class="col-md-2 hidden-md-down purple">
       <h3>What is faker?</h3>
-      <p style="font-size: 17px;text-align: justify;">Here you can generate fake stuff, from Credit cards to Book names and Galaxy names. It's free and always would be. It's source is on Github. For more info visit <a href="#">About Page</a></p>
+      <p style="font-size: 17px;text-align: justify;">Here you can generate fake stuff, from Credit cards to Book names and Galaxy names. It's free and always would be. It's source is on Github. For more info visit <%= link_to "About Page",about_url %></a></p>
     </div>
     <div class="div-carousel col-md-8 " style="height: 300px">
       <section class="carousel slider">
         <div>
           <div class="contents">
             <h1>Generate Fake Addresses</h1>
-            <p>With this awesome tool you can generate fake addresses which you could use in Surveys or untrusted websites in registration.<br/> To get started click the link below:<br/><a href="#" class="btn btn-warning">Generate fake addresses</a></p>
+            <p>With this awesome tool you can generate fake addresses which you could use in Surveys or untrusted websites in registration.<br/> To get started click the link below:<br/><%= link_to "Generate fake addresses",fake_gen_url(1),class: 'btn btn-danger' %></p>
           </div>
         </div>
         <div>
@@ -90,17 +90,7 @@
     </div>
   </div>
 </div><br>
-<center>
-  <div class="newsletter" >
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12"><center><h2>Subscribe to our newsletter <span class="glyphicon glyphicon-send"></span> : </h2> <br><input style="height: 50px" type="email" placeholder="Your Email here" class="form-control"/><br>
-          <a href="#" class="subscribe">Subscribe!</a>
-        </center></div>
-      </div>
-    </div>
-  </div>
-</center>
+<%= render('shared/newsletter') %>
 <script>
   $(document).ready(function () {
     $(".carousel").slick({dots:true});

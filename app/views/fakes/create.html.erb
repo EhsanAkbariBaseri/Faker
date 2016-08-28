@@ -1,0 +1,30 @@
+<%= render('shared/header_index_active') %>
+<div class="container" style="background-color: white">
+  <div class="row" style="padding: 30px">
+    <br><br>
+    <h1><%= @fake_func.name  %></h1>&nbsp;&nbsp;&nbsp;<a onclick="regenerate()" class="btn btn-info">Regenerate</a><hr class="style18"/>
+    <div class="col-md-6">
+      <br><h2>Raw Data <a class="btn btn-warning" onclick="skip_to_json()">Skip to JSON</a></h2><br><br>
+      <span style="color:red;font-size: 20px">Please Note : Field are generated totally different from each other ( e.g. city name isn't necessarily in the generated State )</span><br><br>
+      <p id="generated-info"><% @gen_info.each do |k,v|  %>
+        <span class="key"><%= k %></span> : <span class="value"><%= v %></span><br>
+      <% end %></p><br>
+    </div><a name="jsonsection"></a>
+    <div class="col-md-6" style="border-left: 3px solid mediumpurple">
+<br><h2>JSON Data</h2><br><br>
+      <h4>You can copy & paste code below in a <code>.json</code> file or in JavaScript:</h4><br>
+      <pre id="json-code"><%= JSON.pretty_generate(@gen_info) %></pre>
+    </div>
+  </div>
+</div>
+<script>
+
+  function skip_to_json() {
+    original_url = window.location.href.split('#')[0];
+    window.location.href = original_url + "#jsonsection";
+  }
+
+  function regenerate() {
+    location.reload();
+  }
+</script>

@@ -1,0 +1,32 @@
+<%= render('shared/header_about_active') %>
+<div class="container" style="background-color: white;">
+  <div class="row"><br><br>
+    <div class="col-md-6"><h2>About myself</h2><br><p style="font-size: 18px;text-align: justify">
+      Hi all, I'm Ehsan Akbari, a programming and cracking enthusiast who is always open to new ideas.<br>
+      I created this website because I think it could be useful in many places such as filling your static website ( in that case use the JSON part of generators ), giving fake addresses, emails and so forth to surveys and also for hobby. It generates a wide range of stuff ranging from Credit Cards to Galaxy/Planet names :)
+      <br>
+      Finally the source is available at <a href="https://github.com/EhsanAkbariBaseri/Faker">Github</a><br>
+      Please don't be shy, contribute!
+    </p></div>
+    <div class="col-md-6 hidden-sm hidden-xs "><h2>Image of the Day</h2><br><img class="responsive" width="400" height="400" id="apod_img_id"/> <br><br></div></div>
+</div>
+<script>
+  $(document).ready(function () {
+        var url = "https://api.nasa.gov/planetary/apod?api_key=ZoHO0eISPS9KQ54rSTuBhlsPBJONlwUCNlXGG3e3";
+        $.ajax({
+          url: url,
+          success: function (result) {
+
+            if (result.media_type != "video") {
+              $("#apod_vid_id").css("display", "none");
+              $("#apod_img_id").attr("src", result.url);
+            }
+          },
+          fail: function () {
+            alert("An error occured!")
+          }
+        });
+      }
+  );
+
+</script>
